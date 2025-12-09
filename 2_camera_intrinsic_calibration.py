@@ -142,12 +142,12 @@ if __name__ == '__main__':
     print("카메라 내부 캘리브레이션을 시작합니다.")
 
     # 1. 이미지 폴더 경로 입력받기
-    input_dir = input("1. 데이터 폴더 경로를 입력 (ex:/home/yusungcuk/antlab/0_cam_intrinsic_cal_ws/data): ")
+    input_dir = input("1. 데이터 폴더 경로를 입력: ")
 
     # 2. 체커보드 가로 코너 개수 입력받기 (숫자가 아니면 다시 입력)
     while True:
         try:
-            width = int(input("2. 체커보드의 가로 방향 내부 코너 개수를 입력 (예: 9): "))
+            width = int(input("2. 체커보드의 가로 방향 내부 코너 개수를 입력 (예: 6): "))
             break # 숫자가 올바르게 입력되면 루프 탈출
         except ValueError:
             print("   [오류] 숫자로 입력해야 합니다. 다시 시도해주세요.")
@@ -155,7 +155,7 @@ if __name__ == '__main__':
     # 3. 체커보드 세로 코너 개수 입력받기 (숫자가 아니면 다시 입력)
     while True:
         try:
-            height = int(input("3. 체커보드의 세로 방향 내부 코너 개수를 입력 (예: 6): "))
+            height = int(input("3. 체커보드의 세로 방향 내부 코너 개수를 입력 (예: 9): "))
             break
         except ValueError:
             print("   [오류] 숫자로 입력해야 합니다. 다시 시도해주세요.")
