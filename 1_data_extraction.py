@@ -17,7 +17,7 @@ class ImagePairRecorder(Node):
 
         # Declare parameters
         self.declare_parameter('image_topic', '/camera/image_raw')
-        self.declare_parameter('base_dir', '/home/yusungcuk/capstone/camera_ws/data')
+        self.declare_parameter('base_dir', '/your_data_path')
 
         self.image_topic = self.get_parameter('image_topic').get_parameter_value().string_value
         base_dir = os.path.expanduser(self.get_parameter('base_dir').get_parameter_value().string_value)
@@ -35,7 +35,7 @@ class ImagePairRecorder(Node):
       
         self.get_logger().info(f"{self.image_topic}")
         self.get_logger().info(f"저장 위치 →{self.cam_dir}")
-        self.get_logger().info("▶ 터미널에서 's' 키를 누르면 저장합니다")
+        self.get_logger().info("터미널에서 's' 키를 누르면 저장합니다")
 
         threading.Thread(target=self.keyboard_listener, daemon=True).start()
 
